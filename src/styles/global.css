@@ -1,0 +1,123 @@
+/* ============================================
+   GLOBAL STYLES & UTILITIES
+   ============================================ */
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+/* Sections */
+.section {
+  position: relative;
+  padding: var(--space-section) 0;
+  overflow: hidden;
+}
+
+/* Section Labels */
+.section-label {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: var(--fs-label);
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: var(--space-md);
+  position: relative;
+  padding-left: 2.5rem;
+}
+
+.section-label::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 1.8rem;
+  height: 1px;
+  background: var(--color-accent);
+}
+
+.section-label--light {
+  color: var(--color-accent);
+}
+
+/* Section Titles */
+.section-title {
+  font-size: var(--fs-h2);
+  color: var(--color-white);
+  margin-bottom: var(--space-md);
+}
+
+.section-title span {
+  display: block;
+}
+
+/* Section Subtitles */
+.section-subtitle {
+  font-size: var(--fs-body-lg);
+  color: var(--color-text-secondary);
+  max-width: 680px;
+  line-height: 1.7;
+  margin-bottom: var(--space-xl);
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem 2.5rem;
+  font-family: var(--font-body);
+  font-size: var(--fs-small);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border-radius: var(--radius-full);
+  transition: all var(--duration-normal) var(--ease-out);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn--primary {
+  background: var(--gradient-accent);
+  color: var(--color-bg);
+  border: none;
+}
+
+.btn--primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px var(--color-accent-glow);
+}
+
+.btn--ghost {
+  background: transparent;
+  color: var(--color-white);
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+.btn--ghost:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  background: var(--color-accent-subtle);
+}
+
+.btn--large {
+  padding: 1.25rem 3rem;
+  font-size: 1rem;
+}
+
+/* Visibility helpers */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}

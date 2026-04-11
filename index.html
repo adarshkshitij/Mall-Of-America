@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mall of America — The Destination That Redefines Retail</title>
+  <meta name="description" content="Explore Mall of America: 5.6M sq ft, 520+ stores, 40M+ annual visitors. An interactive sales experience for prospective tenants, sponsors, and event partners." />
+
+  <!-- Preload critical fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+</head>
+<body>
+
+  <!-- Preloader -->
+  <div id="preloader" class="preloader">
+    <div class="preloader__inner">
+      <div class="preloader__logo">MOA</div>
+      <div class="preloader__text">Mall of America</div>
+      <div class="preloader__bar">
+        <div class="preloader__bar-fill"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <nav id="main-nav" class="nav" aria-label="Main navigation">
+    <div class="nav__logo">
+      <span class="nav__logo-mark">MOA</span>
+    </div>
+    <div class="nav__links">
+      <a href="#hero" class="nav__link active" data-section="hero">Home</a>
+      <a href="#overview" class="nav__link" data-section="overview">The Property</a>
+      <a href="#retail" class="nav__link" data-section="retail">Retail</a>
+      <a href="#luxury" class="nav__link" data-section="luxury">Luxury</a>
+      <a href="#dining" class="nav__link" data-section="dining">Dining</a>
+      <a href="#entertainment" class="nav__link" data-section="entertainment">Entertainment</a>
+      <a href="#events" class="nav__link" data-section="events">Events</a>
+      <a href="#contact" class="nav__link" data-section="contact">Contact</a>
+    </div>
+    <div class="nav__cta-wrap">
+      <a href="#contact" class="nav__cta">Partner With Us</a>
+    </div>
+    <button id="nav-toggle" class="nav__toggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile Menu Overlay -->
+  <div id="mobile-menu" class="mobile-menu">
+    <div class="mobile-menu__inner">
+      <a href="#hero" class="mobile-menu__link" data-section="hero">Home</a>
+      <a href="#overview" class="mobile-menu__link" data-section="overview">The Property</a>
+      <a href="#retail" class="mobile-menu__link" data-section="retail">Retail</a>
+      <a href="#luxury" class="mobile-menu__link" data-section="luxury">Luxury</a>
+      <a href="#dining" class="mobile-menu__link" data-section="dining">Dining</a>
+      <a href="#entertainment" class="mobile-menu__link" data-section="entertainment">Entertainment</a>
+      <a href="#events" class="mobile-menu__link" data-section="events">Events</a>
+      <a href="#contact" class="mobile-menu__link" data-section="contact">Contact</a>
+    </div>
+  </div>
+
+  <!-- Side Navigation Dots -->
+  <div id="side-nav" class="side-nav" aria-label="Section navigation">
+    <a href="#hero" class="side-nav__dot active" data-section="hero" aria-label="Hero"></a>
+    <a href="#overview" class="side-nav__dot" data-section="overview" aria-label="Overview"></a>
+    <a href="#retail" class="side-nav__dot" data-section="retail" aria-label="Retail"></a>
+    <a href="#luxury" class="side-nav__dot" data-section="luxury" aria-label="Luxury"></a>
+    <a href="#dining" class="side-nav__dot" data-section="dining" aria-label="Dining"></a>
+    <a href="#entertainment" class="side-nav__dot" data-section="entertainment" aria-label="Entertainment"></a>
+    <a href="#events" class="side-nav__dot" data-section="events" aria-label="Events"></a>
+    <a href="#contact" class="side-nav__dot" data-section="contact" aria-label="Contact"></a>
+  </div>
+
+  <main>
+
+    <!-- ========== SECTION 1: HERO ========== -->
+    <section id="hero" class="section hero">
+      <div class="hero__video-wrap">
+        <video class="hero__video" autoplay muted loop playsinline poster="/images/hero-poster.webp">
+          <source src="https://cdn.coverr.co/videos/coverr-shopping-mall-interior-3609/1080p.mp4" type="video/mp4" />
+        </video>
+        <div class="hero__video-overlay"></div>
+      </div>
+      <div class="hero__content">
+        <div class="hero__badge">The #1 Retail Destination in America</div>
+        <h1 class="hero__title">
+          <span class="hero__title-line">Where <em>40 Million</em></span>
+          <span class="hero__title-line">Stories Begin</span>
+          <span class="hero__title-line">Every Year</span>
+        </h1>
+        <p class="hero__subtitle">5.6 million square feet of retail, dining, entertainment, and limitless opportunity — all under one roof.</p>
+        <div class="hero__actions">
+          <a href="#overview" class="btn btn--primary">Explore the Property</a>
+          <a href="#contact" class="btn btn--ghost">Partner With Us</a>
+        </div>
+      </div>
+      <div class="hero__scroll-indicator">
+        <span>Scroll to Discover</span>
+        <div class="hero__scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- ========== SECTION 2: PROPERTY OVERVIEW ========== -->
+    <section id="overview" class="section overview">
+      <div class="container">
+        <div class="section-label">The Property</div>
+        <h2 class="section-title overview__title">
+          <span>More Than a Mall.</span>
+          <span>A Destination.</span>
+        </h2>
+        <p class="section-subtitle">Mall of America isn't just the largest shopping mall in the United States — it's a self-contained city of commerce, culture, and entertainment that generates over $2 billion in annual economic impact.</p>
+
+        <!-- Stats Grid -->
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-card__number" data-target="5.6" data-suffix="M" data-decimal="1">0</div>
+            <div class="stat-card__unit">Sq. Ft.</div>
+            <div class="stat-card__label">Total Area</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card__number" data-target="520" data-suffix="+">0</div>
+            <div class="stat-card__unit">Stores</div>
+            <div class="stat-card__label">Retail Destinations</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card__number" data-target="40" data-suffix="M+">0</div>
+            <div class="stat-card__unit">Visitors</div>
+            <div class="stat-card__label">Annual Footfall</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card__number" data-target="2" data-suffix="B+" data-prefix="$">0</div>
+            <div class="stat-card__unit">Revenue</div>
+            <div class="stat-card__label">Annual Economic Impact</div>
+          </div>
+        </div>
+
+        <!-- Split Feature -->
+        <div class="split-feature">
+          <div class="split-feature__media">
+            <img src="/images/overview-aerial.webp" alt="Aerial view of Mall of America" class="split-feature__img" loading="lazy" />
+          </div>
+          <div class="split-feature__content">
+            <h3 class="split-feature__heading">Strategic Location, Unmatched Access</h3>
+            <ul class="split-feature__list">
+              <li><strong>12 minutes</strong> from Minneapolis-Saint Paul International Airport</li>
+              <li><strong>Light rail</strong> direct connection from downtown Minneapolis</li>
+              <li><strong>27M people</strong> within a day's drive</li>
+              <li>Connected to <strong>2 luxury hotels</strong> with 700+ rooms</li>
+              <li>Serves a <strong>trade area</strong> spanning 5 states</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== SECTION 3: RETAIL ========== -->
+    <section id="retail" class="section retail">
+      <div class="container">
+        <div class="section-label">Retail Experience</div>
+        <h2 class="section-title">The Retail<br />Ecosystem</h2>
+        <p class="section-subtitle">From global flagships to emerging brands, Mall of America offers the most diverse retail environment in the country.</p>
+      </div>
+
+      <!-- Horizontal Scroll Carousel -->
+      <div class="retail-carousel">
+        <div class="retail-carousel__track">
+
+          <div class="retail-card" data-category="flagship">
+            <div class="retail-card__image-wrap">
+              <img src="/images/retail-flagship.webp" alt="Flagship stores" loading="lazy" />
+            </div>
+            <div class="retail-card__content">
+              <span class="retail-card__tag">Flagship</span>
+              <h3 class="retail-card__title">Flagship Destinations</h3>
+              <p class="retail-card__desc">Anchor tenants including Nordstrom, Macy's — driving consistent high-value foot traffic year-round.</p>
+            </div>
+          </div>
+
+          <div class="retail-card" data-category="fashion">
+            <div class="retail-card__image-wrap">
+              <img src="/images/retail-fashion.webp" alt="Fashion retailers" loading="lazy" />
+            </div>
+            <div class="retail-card__content">
+              <span class="retail-card__tag">Fashion</span>
+              <h3 class="retail-card__title">Fashion & Apparel</h3>
+              <p class="retail-card__desc">200+ fashion brands from Zara and H&M to Nike and Lululemon — every segment, every price point.</p>
+            </div>
+          </div>
+
+          <div class="retail-card" data-category="lifestyle">
+            <div class="retail-card__image-wrap">
+              <img src="/images/retail-lifestyle.webp" alt="Lifestyle brands" loading="lazy" />
+            </div>
+            <div class="retail-card__content">
+              <span class="retail-card__tag">Lifestyle</span>
+              <h3 class="retail-card__title">Lifestyle & Home</h3>
+              <p class="retail-card__desc">Apple, Microsoft, Crate & Barrel — technology, home, and lifestyle tenants that draw high-intent shoppers.</p>
+            </div>
+          </div>
+
+          <div class="retail-card" data-category="popup">
+            <div class="retail-card__image-wrap">
+              <img src="/images/retail-popup.webp" alt="Pop-up retail" loading="lazy" />
+            </div>
+            <div class="retail-card__content">
+              <span class="retail-card__tag">Pop-Up</span>
+              <h3 class="retail-card__title">Pop-Up & Activation</h3>
+              <p class="retail-card__desc">Flexible spaces for temporary brand activations, seasonal pop-ups, and experiential retail concepts.</p>
+            </div>
+          </div>
+
+          <div class="retail-card" data-category="beauty">
+            <div class="retail-card__image-wrap">
+              <img src="/images/retail-beauty.webp" alt="Beauty and wellness" loading="lazy" />
+            </div>
+            <div class="retail-card__content">
+              <span class="retail-card__tag">Beauty</span>
+              <h3 class="retail-card__title">Beauty & Wellness</h3>
+              <p class="retail-card__desc">Sephora, MAC, Bath & Body Works — a thriving beauty ecosystem driving high-frequency, high-margin traffic.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== SECTION 4: LUXURY ========== -->
+    <section id="luxury" class="section luxury">
+      <div class="luxury__bg"></div>
+      <div class="container">
+        <div class="luxury__header">
+          <div class="section-label section-label--light">Luxury</div>
+          <h2 class="section-title luxury__title">An Elevated<br />Experience</h2>
+          <p class="section-subtitle luxury__subtitle">A curated destination within a destination — where premium brands find an audience that expects nothing less.</p>
+        </div>
+
+        <div class="luxury__grid">
+          <div class="luxury__card luxury__card--large">
+            <img src="/images/luxury-interior.webp" alt="Luxury retail interior" loading="lazy" />
+            <div class="luxury__card-overlay">
+              <h3>Premium Positioning</h3>
+              <p>Dedicated luxury corridors with elevated finishes, private shopping suites, and VIP experiences that attract high-net-worth visitors.</p>
+            </div>
+          </div>
+          <div class="luxury__card">
+            <img src="/images/luxury-brand.webp" alt="Luxury brand storefront" loading="lazy" />
+            <div class="luxury__card-overlay">
+              <h3>Exclusive Brands</h3>
+              <p>Home to aspirational and luxury brands that define modern premium retail.</p>
+            </div>
+          </div>
+          <div class="luxury__card">
+            <img src="/images/luxury-experience.webp" alt="Luxury shopping experience" loading="lazy" />
+            <div class="luxury__card-overlay">
+              <h3>Concierge Services</h3>
+              <p>White-glove service, personal shoppers, and luxury amenities for discerning guests.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== SECTION 5: DINING ========== -->
+    <section id="dining" class="section dining">
+      <div class="container">
+        <div class="section-label">Dining & Lifestyle</div>
+        <h2 class="section-title">Food Is a<br />Destination</h2>
+        <p class="section-subtitle">Over 50 restaurants and eateries — from elevated dining to local favorites — making Mall of America a culinary destination in its own right.</p>
+
+        <div class="dining__grid">
+          <div class="dining__card dining__card--tall">
+            <img src="/images/dining-fine.webp" alt="Fine dining" loading="lazy" />
+            <div class="dining__card-content">
+              <span class="dining__card-tag">Fine Dining</span>
+              <h3>Elevated Cuisine</h3>
+              <p>Award-winning restaurants offering world-class dining experiences minutes from the terminal.</p>
+            </div>
+          </div>
+          <div class="dining__card">
+            <img src="/images/dining-casual.webp" alt="Casual dining" loading="lazy" />
+            <div class="dining__card-content">
+              <span class="dining__card-tag">Casual</span>
+              <h3>Casual Dining</h3>
+              <p>Family-friendly favorites and fast-casual concepts that keep visitors fueled and engaged.</p>
+            </div>
+          </div>
+          <div class="dining__card">
+            <img src="/images/dining-bar.webp" alt="Bars and lounges" loading="lazy" />
+            <div class="dining__card-content">
+              <span class="dining__card-tag">Lounges</span>
+              <h3>Bars & Lounges</h3>
+              <p>After-dark destinations transforming the mall into an evening social hub.</p>
+            </div>
+          </div>
+          <div class="dining__card dining__card--wide">
+            <img src="/images/dining-food-hall.webp" alt="Food hall" loading="lazy" />
+            <div class="dining__card-content">
+              <span class="dining__card-tag">Food Hall</span>
+              <h3>Food Hall Experience</h3>
+              <p>A curated marketplace featuring diverse global cuisines — the heartbeat of daily footfall.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== SECTION 6: ENTERTAINMENT ========== -->
+    <section id="entertainment" class="section entertainment">
+      <div class="container">
+        <div class="section-label">Attractions & Entertainment</div>
+        <h2 class="section-title">The Ultimate<br />Differentiator</h2>
+        <p class="section-subtitle">This is what separates a mega-mall from a shopping center. World-class attractions that draw millions — and keep them here.</p>
+      </div>
+
+      <div class="attractions">
+
+        <div class="attraction" data-attraction="nickelodeon">
+          <div class="attraction__media">
+            <img src="/images/ent-nickelodeon.webp" alt="Nickelodeon Universe" loading="lazy" />
+          </div>
+          <div class="attraction__content">
+            <span class="attraction__badge">🎢 Largest Indoor Theme Park in the US</span>
+            <h3 class="attraction__title">Nickelodeon Universe</h3>
+            <p class="attraction__desc">27 rides and attractions spanning 7 acres of pure adrenaline. The single biggest reason families plan multi-day visits — generating unmatched dwell time and repeat traffic.</p>
+            <div class="attraction__stats">
+              <div class="attraction__stat"><strong>7</strong> Acres</div>
+              <div class="attraction__stat"><strong>27</strong> Rides</div>
+              <div class="attraction__stat"><strong>#1</strong> Family Draw</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="attraction attraction--reverse" data-attraction="sealife">
+          <div class="attraction__media">
+            <img src="/images/ent-sealife.webp" alt="SEA LIFE Aquarium" loading="lazy" />
+          </div>
+          <div class="attraction__content">
+            <span class="attraction__badge">🐠 300-Foot Underwater Tunnel</span>
+            <h3 class="attraction__title">SEA LIFE Minnesota Aquarium</h3>
+            <p class="attraction__desc">10,000+ marine creatures, immersive underwater tunnels, and touch pools. A year-round anchor attraction driving steady daily traffic regardless of weather or season.</p>
+            <div class="attraction__stats">
+              <div class="attraction__stat"><strong>10K+</strong> Creatures</div>
+              <div class="attraction__stat"><strong>300ft</strong> Tunnel</div>
+              <div class="attraction__stat"><strong>365</strong> Days/Year</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="attraction" data-attraction="flyover">
+          <div class="attraction__media">
+            <img src="/images/ent-flyover.webp" alt="FlyOver America" loading="lazy" />
+          </div>
+          <div class="attraction__content">
+            <span class="attraction__badge">✈️ Flight Simulation Experience</span>
+            <h3 class="attraction__title">FlyOver America</h3>
+            <p class="attraction__desc">A breathtaking, multi-sensory flight ride across America's most iconic landscapes. Wind in your hair, mist on your face — a premium experience that commands premium ticket prices.</p>
+            <div class="attraction__stats">
+              <div class="attraction__stat"><strong>4D</strong> Experience</div>
+              <div class="attraction__stat"><strong>$30+</strong> Avg Ticket</div>
+              <div class="attraction__stat"><strong>Top 10</strong> Attraction</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="attraction attraction--reverse" data-attraction="crayola">
+          <div class="attraction__media">
+            <img src="/images/ent-crayola.webp" alt="Crayola Experience" loading="lazy" />
+          </div>
+          <div class="attraction__content">
+            <span class="attraction__badge">🖍️ Interactive Creative Center</span>
+            <h3 class="attraction__title">Crayola Experience</h3>
+            <p class="attraction__desc">25+ hands-on creative activities across 60,000 sq ft. The family-first experience that turns a shopping trip into a full-day adventure — and extends average visit duration by hours.</p>
+            <div class="attraction__stats">
+              <div class="attraction__stat"><strong>60K</strong> Sq Ft</div>
+              <div class="attraction__stat"><strong>25+</strong> Activities</div>
+              <div class="attraction__stat"><strong>+3hr</strong> Dwell Time</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========== SECTION 7: EVENTS & PLATFORM ========== -->
+    <section id="events" class="section events">
+      <div class="events__hero">
+        <img src="/images/events-hero.webp" alt="Mall of America event" loading="lazy" />
+        <div class="events__hero-overlay"></div>
+        <div class="events__hero-content">
+          <div class="section-label section-label--light">Events & Platform</div>
+          <h2 class="section-title events__title">Not Just a Building.<br />A Global Stage.</h2>
+          <p class="section-subtitle events__subtitle">From concert tours and product launches to brand activations and corporate events — Mall of America is the venue that puts your brand in front of millions.</p>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="events__capabilities">
+          <div class="events__capability">
+            <div class="events__capability-icon">🎤</div>
+            <h3>Concerts & Performances</h3>
+            <p>A-list musical acts and live performances on the iconic MOA stage — reaching audiences of thousands in an unmatched setting.</p>
+          </div>
+          <div class="events__capability">
+            <div class="events__capability-icon">🚀</div>
+            <h3>Product Launches</h3>
+            <p>The perfect arena for global product reveals — leverage 40M+ annual visitors as your built-in audience.</p>
+          </div>
+          <div class="events__capability">
+            <div class="events__capability-icon">🏢</div>
+            <h3>Corporate Events</h3>
+            <p>Flexible convention-quality spaces with world-class hospitality, connected hotels, and endless entertainment options for attendees.</p>
+          </div>
+          <div class="events__capability">
+            <div class="events__capability-icon">⭐</div>
+            <h3>Brand Activations</h3>
+            <p>High-traffic activation zones throughout the property — create immersive brand experiences where 40 million people already are.</p>
+          </div>
+        </div>
+
+        <!-- Event Highlight Cards -->
+        <div class="events__highlights">
+          <h3 class="events__highlights-title">Past Highlights</h3>
+          <div class="events__highlights-grid">
+            <div class="events__highlight-card">
+              <img src="/images/event-1.webp" alt="Concert event" loading="lazy" />
+              <div class="events__highlight-info">
+                <span class="events__highlight-type">Concert</span>
+                <h4>Live at MOA</h4>
+                <p>Major musical acts performing to packed audiences in the heart of retail.</p>
+              </div>
+            </div>
+            <div class="events__highlight-card">
+              <img src="/images/event-2.webp" alt="Brand activation" loading="lazy" />
+              <div class="events__highlight-info">
+                <span class="events__highlight-type">Activation</span>
+                <h4>Brand Takeovers</h4>
+                <p>Full-property activations transforming the mall into an immersive brand world.</p>
+              </div>
+            </div>
+            <div class="events__highlight-card">
+              <img src="/images/event-3.webp" alt="Celebrity appearance" loading="lazy" />
+              <div class="events__highlight-info">
+                <span class="events__highlight-type">Celebrity</span>
+                <h4>Star Appearances</h4>
+                <p>Celebrity meet-and-greets, signings, and red carpet events drawing massive crowds.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="events__cta-section">
+          <h3>Ready to Book the Stage?</h3>
+          <p>From intimate activations to large-scale concerts, we have the space, the audience, and the infrastructure.</p>
+          <a href="#contact" class="btn btn--primary btn--large">Inquire About Events</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== SECTION 8: SPONSORSHIP (Expandable Module) ========== -->
+    <section id="sponsorship" class="section sponsorship">
+      <div class="container">
+        <div class="section-label">Partnership Opportunities</div>
+        <h2 class="section-title">Amplify Your<br />Brand Reach</h2>
+        <p class="section-subtitle">40 million annual visitors. One property. Unlimited activation potential.</p>
+
+        <div class="sponsorship__tiers">
+          <div class="sponsorship__tier">
+            <div class="sponsorship__tier-badge">Platinum</div>
+            <h3>Platinum Partner</h3>
+            <ul>
+              <li>Exclusive naming rights on major venues</li>
+              <li>Year-round brand visibility across property</li>
+              <li>Priority access to all event activations</li>
+              <li>Dedicated brand lounge & VIP space</li>
+              <li>Custom audience analytics dashboard</li>
+            </ul>
+            <a href="#contact" class="btn btn--primary">Inquire</a>
+          </div>
+          <div class="sponsorship__tier sponsorship__tier--featured">
+            <div class="sponsorship__tier-badge">Gold</div>
+            <h3>Gold Partner</h3>
+            <ul>
+              <li>Co-branded activations in high-traffic zones</li>
+              <li>Seasonal brand integration opportunities</li>
+              <li>Digital signage across property network</li>
+              <li>Quarterly audience reports</li>
+              <li>Priority event booking windows</li>
+            </ul>
+            <a href="#contact" class="btn btn--primary">Inquire</a>
+          </div>
+          <div class="sponsorship__tier">
+            <div class="sponsorship__tier-badge">Silver</div>
+            <h3>Silver Partner</h3>
+            <ul>
+              <li>Pop-up activation opportunities</li>
+              <li>Brand presence in select zones</li>
+              <li>Event sponsorship packages</li>
+              <li>Bi-annual audience insights</li>
+              <li>Cross-promotion with property marketing</li>
+            </ul>
+            <a href="#contact" class="btn btn--primary">Inquire</a>
+          </div>
+        </div>
+
+        <!-- Audience Data -->
+        <div class="sponsorship__data">
+          <h3 class="sponsorship__data-title">Audience At a Glance</h3>
+          <div class="sponsorship__data-grid">
+            <div class="sponsorship__data-card">
+              <div class="sponsorship__data-bar">
+                <div class="sponsorship__data-fill" data-width="72"></div>
+              </div>
+              <div class="sponsorship__data-label">72% Female Shoppers (18-45)</div>
+            </div>
+            <div class="sponsorship__data-card">
+              <div class="sponsorship__data-bar">
+                <div class="sponsorship__data-fill" data-width="85"></div>
+              </div>
+              <div class="sponsorship__data-label">85% Household Income $75K+</div>
+            </div>
+            <div class="sponsorship__data-card">
+              <div class="sponsorship__data-bar">
+                <div class="sponsorship__data-fill" data-width="63"></div>
+              </div>
+              <div class="sponsorship__data-label">63% Visit Multiple Times/Year</div>
+            </div>
+            <div class="sponsorship__data-card">
+              <div class="sponsorship__data-bar">
+                <div class="sponsorship__data-fill" data-width="90"></div>
+              </div>
+              <div class="sponsorship__data-label">90% Avg. Dwell Time 3+ Hours</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== SECTION 9: CTA / CONTACT ========== -->
+    <section id="contact" class="section contact">
+      <div class="contact__bg-video">
+        <video autoplay muted loop playsinline>
+          <source src="https://cdn.coverr.co/videos/coverr-night-city-lights-4157/1080p.mp4" type="video/mp4" />
+        </video>
+        <div class="contact__bg-overlay"></div>
+      </div>
+      <div class="container contact__inner">
+        <h2 class="contact__title">
+          <span>Your Brand.</span>
+          <span>Our Stage.</span>
+          <span><em>40 Million Reasons</em> to Be Here.</span>
+        </h2>
+        <p class="contact__subtitle">Whether you're looking to lease a flagship space, activate your brand, or book a world-class venue — let's start the conversation.</p>
+
+        <div class="contact__cards">
+          <a href="#" class="contact__card" id="cta-lease">
+            <div class="contact__card-icon">🏬</div>
+            <h3>Lease a Space</h3>
+            <p>Flagship to pop-up — find the perfect retail position in America's most-visited mall.</p>
+            <span class="contact__card-arrow">→</span>
+          </a>
+          <a href="#" class="contact__card" id="cta-sponsor">
+            <div class="contact__card-icon">🤝</div>
+            <h3>Explore Sponsorship</h3>
+            <p>Align your brand with 40M+ annual visitors through strategic partnership opportunities.</p>
+            <span class="contact__card-arrow">→</span>
+          </a>
+          <a href="#" class="contact__card" id="cta-event">
+            <div class="contact__card-icon">🎪</div>
+            <h3>Book a Venue</h3>
+            <p>From concerts to product launches — our stage is your stage.</p>
+            <span class="contact__card-arrow">→</span>
+          </a>
+        </div>
+
+        <div class="contact__info">
+          <p>Ready to learn more? <strong>medi@liat.ai</strong></p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <span class="footer__logo">MOA</span>
+        <span>Mall of America — Interactive Sales Experience</span>
+      </div>
+      <div class="footer__note">
+        Built with AI-assisted development • Screening Assignment
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
