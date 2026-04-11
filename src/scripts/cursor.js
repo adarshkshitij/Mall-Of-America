@@ -3,26 +3,41 @@ import { gsap } from 'gsap';
 export function initCursor() {
   const cursor = document.querySelector('.cursor');
   const follower = document.querySelector('.cursor-follower');
+  const cursorText = document.querySelector('.cursor-text');
 
   if (!cursor || !follower) return;
 
+  // Set initial state
+  gsap.set([cursor, follower], { 
+    opacity: 0,
+    xPercent: -50,
+    yPercent: -50
+  });
+
+  // Only hide the default cursor IF the custom one is ready
+  document.body.classList.add('has-custom-cursor');
+
   // Move the cursor with the mouse
-  // We use quickSetter for performance in mousemove events
-  const xCursorSetter = gsap.quickSetter(cursor, "left", "px");
-  const yCursorSetter = gsap.quickSetter(cursor, "top", "px");
+  const xCursorSetter = gsap.quickSetter(cursor, "x", "px");
+  const yCursorSetter = gsap.quickSetter(cursor, "y", "px");
   
-  // Follower has a slight lag
-  const xFollowerSetter = gsap.quickSetter(follower, "left", "px");
-  const yFollowerSetter = gsap.quickSetter(follower, "top", "px");
+  const xFollowerSetter = gsap.quickSetter(follower, "x", "px");
+  const yFollowerSetter = gsap.quickSetter(follower, "y", "px");
+
+  let isFirstMove = true;
 
   window.addEventListener("mousemove", (e) => {
-    // Immediate cursor move
+    if (isFirstMove) {
+      gsap.to([cursor, follower], { opacity: 1, duration: 0.3 });
+      isFirstMove = false;
+    }
+
     xCursorSetter(e.clientX);
     yCursorSetter(e.clientY);
 
-    // Lagged follower move
+    // Follower has a slight, smooth lag
     gsap.to({}, {
-      duration: 0.15,
+      duration: 0.1,
       onUpdate: () => {
         xFollowerSetter(e.clientX);
         yFollowerSetter(e.clientY);
@@ -31,38 +46,63 @@ export function initCursor() {
   });
 
   // Handle Hovers
-  const hoverElements = document.querySelectorAll('a, button, .nav__toggle, .side-nav__dot, .retail-card');
-  
-  hoverElements.forEach(el => {
-    el.addEventListener('mouseenter', () => {
+  const updateCursorState = (e) => {
+    // 1. Always clear previous states first
+    cursor.classList.remove('is-hovering', 'is-label');
+    follower.classList.remove('is-hovering', 'is-label');
+    cursorText.innerText = '';
+
+    // 2. Find the relevant interactive target
+    const target = e.target.closest('a, button, .nav__toggle, .side-nav__dot, [data-cursor], .retail-card, .events__highlight-card');
+    
+    if (!target) return;
+
+    // 3. Priority: Check if target or any parent has a data-cursor label (e.g. DRAG/EXPLORE)
+    const labelTarget = target.closest('[data-cursor]');
+    const cursorType = labelTarget ? labelTarget.dataset.cursor : null;
+    
+    if (cursorType) {
+      cursor.classList.add('is-label');
+      follower.classList.add('is-label');
+      cursorText.innerText = cursorType === 'drag' ? 'DRAG' : 'EXPLORE';
+      gsap.set(cursor, { xPercent: -50, yPercent: -50 });
+    } else {
+      // 4. Standard hover for links/buttons/cards without labels
       cursor.classList.add('is-hovering');
       follower.classList.add('is-hovering');
-    });
+      gsap.set(cursor, { xPercent: 0, yPercent: 0 });
+    }
+  };
 
-    el.addEventListener('mouseleave', () => {
-      cursor.classList.remove('is-hovering');
-      follower.classList.remove('is-hovering');
-    });
+  const resetCursorState = () => {
+    cursor.classList.remove('is-hovering', 'is-label');
+    follower.classList.remove('is-hovering', 'is-label');
+    cursorText.innerText = '';
+    gsap.set(cursor, { xPercent: -50, yPercent: -50 });
+  };
+
+  // Use delegation for better performance
+  window.addEventListener('mouseover', updateCursorState);
+  window.addEventListener('mouseout', (e) => {
+    if (!e.relatedTarget || !e.relatedTarget.closest) resetCursorState();
   });
 
   // Handle Dragging state for the carousel
-  const carousel = document.querySelector('.retail-track');
-  if (carousel) {
-    carousel.addEventListener('mousedown', () => {
-      cursor.classList.add('is-dragging');
+  window.addEventListener('mousedown', (e) => {
+    if (e.target.closest('[data-cursor="drag"]')) {
       follower.classList.add('is-dragging');
-    });
-    window.addEventListener('mouseup', () => {
-      cursor.classList.remove('is-dragging');
-      follower.classList.remove('is-dragging');
-    });
-  }
+    }
+  });
+  
+  window.addEventListener('mouseup', () => {
+    follower.classList.remove('is-dragging');
+  });
 
   // Handle cursor visibility when leaving/entering the window
-  document.addEventListener('mouseenter', () => {
-    gsap.to([cursor, follower], { opacity: 1, duration: 0.3 });
-  });
   document.addEventListener('mouseleave', () => {
     gsap.to([cursor, follower], { opacity: 0, duration: 0.3 });
+  });
+  document.addEventListener('mouseenter', () => {
+    gsap.to([cursor, follower], { opacity: 1, duration: 0.3 });
   });
 }

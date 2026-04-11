@@ -167,7 +167,7 @@
 
       <!-- Horizontal Scroll Carousel -->
       <div class="retail-carousel">
-        <div class="retail-carousel__track">
+        <div class="retail-carousel__track" data-cursor="drag">
 
           <div class="retail-card" data-category="flagship">
             <div class="retail-card__image-wrap">
@@ -427,7 +427,7 @@
         <div class="events__highlights">
           <h3 class="events__highlights-title">Past Highlights</h3>
           <div class="events__highlights-grid">
-            <div class="events__highlight-card">
+            <div class="events__highlight-card" data-cursor="view">
               <img src="/images/event-1.webp" alt="Concert event" loading="lazy" />
               <div class="events__highlight-info">
                 <span class="events__highlight-type">Concert</span>
@@ -435,7 +435,7 @@
                 <p>Major musical acts performing to packed audiences in the heart of retail.</p>
               </div>
             </div>
-            <div class="events__highlight-card">
+            <div class="events__highlight-card" data-cursor="view">
               <img src="/images/event-2.webp" alt="Brand activation" loading="lazy" />
               <div class="events__highlight-info">
                 <span class="events__highlight-type">Activation</span>
@@ -443,7 +443,7 @@
                 <p>Full-property activations transforming the mall into an immersive brand world.</p>
               </div>
             </div>
-            <div class="events__highlight-card">
+            <div class="events__highlight-card" data-cursor="view">
               <img src="/images/event-3.webp" alt="Celebrity appearance" loading="lazy" />
               <div class="events__highlight-info">
                 <span class="events__highlight-type">Celebrity</span>
@@ -595,14 +595,16 @@
         <span>Mall of America — Interactive Sales Experience</span>
       </div>
       <div class="footer__note">
-        Designed & Developed by <a href="https://linkedin.com/in/adarsh-kshitij/" target="_blank" rel="noopener noreferrer" style="color: var(--color-accent); text-decoration: none; font-weight: 600;">Adarsh Kumar</a> • AI-Assisted Screening Assignment
+        Designed & Developed by <a href="https://linkedin.com/in/adarsh-kshitij/" target="_blank" rel="noopener noreferrer" style="color: var(--color-accent); text-decoration: none; font-weight: 600;">Adarsh Kumar</a> • Premium Brand Integration Showcase
       </div>
     </div>
   </footer>
 
   <!-- Custom Cursor -->
   <div class="cursor"></div>
-  <div class="cursor-follower"></div>
+  <div class="cursor-follower">
+    <span class="cursor-text"></span>
+  </div>
 
   <script type="module" src="/src/main.js"></script>
 </body>
