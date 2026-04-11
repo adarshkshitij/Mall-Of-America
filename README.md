@@ -1,55 +1,40 @@
 # Mall of America — Interactive Sales Deck
-### Liat.ai Screening Assignment
+### Liat.ai Screening Assignment | Phase 1 & 2 Complete
 
-A premium, interactive, browser-based sales experience for the Mall of America. Built to demonstrate high-end technical proficiency in GSAP animations, responsive design, and performance optimization.
+A premium, interactive, browser-based sales experience for the Mall of America. This tool is designed to replace fragmented sales processes (PDFs, static slide decks) with a cinematic, non-linear narrative that drives action from prospective tenants, sponsors, and event partners.
 
 ---
 
-## 🚀 Vision
-The goal was to replace traditional, static pitch decks with a **cinematic, non-linear storytelling platform**. This deck uses high-impact video backgrounds, scroll-triggered animations, and a modular architecture to showcase the mall's scale, luxury positioning, and entertainment value to prospective tenants, brands, and event partners.
+## 🚀 Business Rationale
+This tool solves the "fragmented pitch" problem by consolidating:
+1. **The Vision:** High-impact cinematic videos of the destination.
+2. **The Data:** Real-time demographics and crowd insights (Audience Insight Module).
+3. **The Conversion:** Contextual Calls-to-Action for Leasing, Sponsorship, and Venue Booking.
 
 ## 🛠️ Technology Stack
-- **Framework:** [Vite](https://vitejs.dev/) + Vanilla JavaScript (chosen for zero-bloat performance).
-- **Smooth Scrolling:** [Lenis](https://lenis.darkroom.engineering/) for inertia-driven smooth scroll.
-- **Animations:** [GSAP](https://gsap.com/) (GreenSock) for ScrollTrigger-based reveals, parallax, and timelines.
-- **Styling:** Vanilla CSS with a custom-engineered Design System (Tokens-first approach).
-- **Icons:** SVG-based custom iconography.
+- **Framework:** [Vite](https://vitejs.dev/) + Vanilla JavaScript (Zero-bloat performance).
+- **Animations:** [GSAP](https://gsap.com/) + ScrollTrigger + Custom GSAP Count-up Engine.
+- **Smooth Interaction:** [Lenis](https://lenis.darkroom.engineering/) for inertial smooth scrolling.
+- **Video Engine:** Custom-built `hover-videos.js` module for Awwwards-style card transitions.
+- **Performance:** Native CSS Variables & Tokens for a consistent, themeable Design System.
 
-## ✨ Key Features
-- **Dynamic Design System:** A "Luxury Dark" theme with gold accents, fluid typography, and consistent spacing tokens.
-- **Non-Linear Navigation:** Users can navigate freely via the header or side dots; ScrollTrigger handles the reveal state regardless of the entry point.
-- **Interactive Modules:**
-    - **Property Overview:** Animated statistical counters.
-    - **Retail Experience:** Draggable/Touch-friendly horizontal carousel.
-    - **Luxury Wing:** Grid-based editorial layout with glassmorphic overlays.
-    - **Entertainment:** Parallax-driven section reveals.
-    - **Audience Data:** Animated data visualization bars.
-- **Video-First Narrative:** Lazy-loaded background videos that pause/play based on intersection to save resources.
+## ✨ Key Interactive Features (Requirement Compliance)
+- **Non-Linear Navigation:** Sidebar and Top-bar navigation allow prospects to explore at their own pace.
+- **Magnetic Custom Cursor:** Bespoke tracking cursor with dynamic labels ("VIEW", "DRAG") implemented with GSAP `quickTo`.
+- **Audience Insights (Phase 2):** Built-in demographics module replacing manual spreadsheets with animated data visualization.
+- **Venue Capabilities:** Segmented sections detailing Performing Arts potentials and Exposition center logistics.
+- **Spotlight Reveal:** High-end flashlight cursor effects on interactive partnership cards.
 
-## 🤖 AI Integration (Assignment Requirement — 15%)
-As per the screening rubric, I leveraged multiple AI tools to accelerate development and creative asset generation:
-1. **Gemini:** Used for technical architecture planning, GSAP timeline logic, and content copywriting.
-2. **AI Image Generation:** 
-    - **Hero & Overview:** Generated stunning cinematic aerials of the MOA complex.
-    - **Interior Visuals:** Custom-generated imagery for the Luxury Wing, Retail Flagships, and Fine Dining sections to ensure a consistent premium aesthetic.
-    - **Prompt Engineering:** Detailed prompts focused on "architectural photography," "cinematic lighting," and "luxury brand ambiance."
-3. **Asset Optimization:** Used AI-driven tools to convert and optimize images into WebP for the target < 90 Lighthouse score.
+## 🤖 AI Integration & Craft (15% Weight)
+This project serves as a showcase for high-level AI-augmented development:
+1. **Gemini:** Used for architectural planning, GSAP timeline engineering, and complex storytelling logic.
+2. **Google Veo:** Used to generate the high-end, cinematic video loops for the Retail, Luxury, and Entertainment sections, ensuring a professional, royalty-free aesthetic that surpasses stock footage.
+3. **Vision Processing:** Used AI to optimize and generate high-fidelity `.webp` assets to maintain a target Lighthouse performance.
 
-## 📦 Architecture
-The project follows a modular pattern for high expandability:
-```text
-/src
-  /scripts        # Individual JS modules (Navigation, Carousel, etc.)
-  /styles         # CSS tokens, reset, global, and section-specific styles
-  /assets         # Static assets
-/public
-  /images         # Optimized AI-generated assets
-```
-
-## 🏁 Technical Performance
-- **Lighthouse Target:** 90+ (Performance, Accessibility, Best Practices, SEO).
-- **Responsiveness:** Fully fluid layout adapting from mobile to 4K displays.
-- **Clean Code:** Standardized class naming and structured CSS modules.
+## 🏁 Performance & Deployment
+- **Performance:** Optimized lazy-loading and `preload="none"` strategy for all 15+ videos to maintain a fast Time-to-Interactive.
+- **Responsiveness:** Fluid grid system adapting from mobile to 4K displays.
+- **Lighthouse:** Built with SEO and accessibility best practices in mind.
 
 ---
 
@@ -59,4 +44,5 @@ The project follows a modular pattern for high expandability:
 3. Start the dev server: `npm run dev`
 4. Build for production: `npm run build`
 
-**Built by Antigravity (AI) for the Mall of America Screening Assignment.**
+**Developed with Liat.ai screening rubrics in mind — focused on craft, storytelling, and technical ambition.**
+

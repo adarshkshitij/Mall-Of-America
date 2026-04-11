@@ -1,0 +1,102 @@
+/* ============================================
+   AUDIENCE INSIGHTS SECTION
+   ============================================ */
+
+.audience {
+  background: var(--color-bg-elevated);
+  padding: var(--space-3xl) 0;
+}
+
+.audience__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4rem;
+  align-items: center;
+}
+
+.audience__content {
+  padding-right: 2rem;
+}
+
+.audience__stats-viz {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.data-bar {
+  width: 100%;
+}
+
+.data-bar__label {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+  font-family: var(--font-body);
+  font-size: var(--fs-small);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-text);
+}
+
+.data-bar__track {
+  width: 100%;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+}
+
+.data-bar__fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: var(--gradient-accent);
+  width: 0%; /* Animated via data-bars.js or GSAP */
+  transition: width 1.5s var(--ease-out);
+  border-radius: 4px;
+  box-shadow: 0 0 15px var(--color-accent-glow);
+}
+
+.audience__cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.audience__infocard {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--color-border);
+  padding: 1.5rem;
+  border-radius: var(--radius-md);
+  transition: all var(--duration-normal) var(--ease-out);
+}
+
+.audience__infocard:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: var(--color-accent);
+  transform: translateY(-5px);
+}
+
+.audience__infocard h4 {
+  color: var(--color-accent);
+  font-size: var(--fs-h4);
+  margin-bottom: 0.5rem;
+}
+
+.audience__infocard p {
+  font-size: var(--fs-caption);
+  color: var(--color-text-secondary);
+  line-height: 1.4;
+}
+
+@media (max-width: 992px) {
+  .audience__grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}

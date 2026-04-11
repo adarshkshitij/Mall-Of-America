@@ -18,7 +18,7 @@ import { initNavigation } from './scripts/navigation.js';
 import { initAnimations } from './scripts/animations.js';
 import { initVideoController } from './scripts/video-controller.js';
 import { initRetailCarousel } from './scripts/carousel.js';
-import { initCounters } from './scripts/counters.js';
+import { initStatsCounter } from './scripts/stats.js';
 import { initDataBars } from './scripts/data-bars.js';
 import { initCursor } from './scripts/cursor.js';
 import { initSpotlight } from './scripts/spotlight.js';
@@ -48,7 +48,7 @@ initPreloader(() => {
   initAnimations(lenis);
   initVideoController();
   initRetailCarousel();
-  initCounters();
+  initStatsCounter();
   initDataBars();
   initCursor();
   
