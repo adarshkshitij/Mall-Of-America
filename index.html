@@ -81,7 +81,7 @@
     <section id="hero" class="section hero">
       <div class="hero__video-wrap">
         <video class="hero__video" autoplay muted loop playsinline poster="/images/hero-poster.webp">
-          <source src="https://cdn.coverr.co/videos/coverr-shopping-mall-interior-3609/1080p.mp4" type="video/mp4" />
+          <source src="/videos/hero-bg.mp4" type="video/mp4" />
         </video>
         <div class="hero__video-overlay"></div>
       </div>
@@ -388,7 +388,9 @@
     <!-- ========== SECTION 7: EVENTS & PLATFORM ========== -->
     <section id="events" class="section events">
       <div class="events__hero">
-        <img src="/images/events-hero.webp" alt="Mall of America event" loading="lazy" />
+        <video class="events__video" autoplay muted loop playsinline poster="/images/events-hero.webp">
+          <source src="/videos/events-bg.mp4" type="video/mp4" />
+        </video>
         <div class="events__hero-overlay"></div>
         <div class="events__hero-content">
           <div class="section-label section-label--light">Events & Platform</div>
@@ -542,8 +544,8 @@
     <!-- ========== SECTION 9: CTA / CONTACT ========== -->
     <section id="contact" class="section contact">
       <div class="contact__bg-video">
-        <video autoplay muted loop playsinline>
-          <source src="https://cdn.coverr.co/videos/coverr-night-city-lights-4157/1080p.mp4" type="video/mp4" />
+        <video autoplay muted loop playsinline poster="/images/overview-aerial.webp" style="transform: scale(1.15); object-fit: cover; width:100%; height:100%;">
+          <source src="/videos/contact-bg.mp4" type="video/mp4" />
         </video>
         <div class="contact__bg-overlay"></div>
       </div>
@@ -577,7 +579,8 @@
         </div>
 
         <div class="contact__info">
-          <p>Ready to learn more? <strong>medi@liat.ai</strong></p>
+          <p>Ready to collaborate? <a href="mailto:adarshandadarsh24@gmail.com" style="color: var(--color-accent); text-decoration: none; font-weight: 700;">adarshandadarsh24@gmail.com</a></p>
+          <p style="margin-top: 0.5rem;"><a href="https://linkedin.com/in/adarsh-kshitij/" target="_blank" rel="noopener noreferrer" style="color: var(--color-text-muted); text-decoration: underline; font-size: 0.9rem;">Connect on LinkedIn</a></p>
         </div>
       </div>
     </section>
@@ -592,10 +595,14 @@
         <span>Mall of America — Interactive Sales Experience</span>
       </div>
       <div class="footer__note">
-        Built with AI-assisted development • Screening Assignment
+        Designed & Developed by <a href="https://linkedin.com/in/adarsh-kshitij/" target="_blank" rel="noopener noreferrer" style="color: var(--color-accent); text-decoration: none; font-weight: 600;">Adarsh Kumar</a> • AI-Assisted Screening Assignment
       </div>
     </div>
   </footer>
+
+  <!-- Custom Cursor -->
+  <div class="cursor"></div>
+  <div class="cursor-follower"></div>
 
   <script type="module" src="/src/main.js"></script>
 </body>

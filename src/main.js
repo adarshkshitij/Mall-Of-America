@@ -20,6 +20,7 @@ import { initVideoController } from './scripts/video-controller.js';
 import { initRetailCarousel } from './scripts/carousel.js';
 import { initCounters } from './scripts/counters.js';
 import { initDataBars } from './scripts/data-bars.js';
+import { initCursor } from './scripts/cursor.js';
 
 // Initialize Lenis
 const lenis = new Lenis({
@@ -47,4 +48,5 @@ initPreloader(() => {
   initRetailCarousel();
   initCounters();
   initDataBars();
+  initCursor();
 });
