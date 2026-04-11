@@ -12,6 +12,15 @@ import './styles/sections.css';
 import Lenis from 'lenis';
 import 'lenis/dist/lenis.css';
 
+// Modules
+import { initPreloader } from './scripts/preloader.js';
+import { initNavigation } from './scripts/navigation.js';
+import { initAnimations } from './scripts/animations.js';
+import { initVideoController } from './scripts/video-controller.js';
+import { initRetailCarousel } from './scripts/carousel.js';
+import { initCounters } from './scripts/counters.js';
+import { initDataBars } from './scripts/data-bars.js';
+
 // Initialize Lenis
 const lenis = new Lenis({
   duration: 1.2,
