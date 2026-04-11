@@ -21,6 +21,8 @@ import { initRetailCarousel } from './scripts/carousel.js';
 import { initCounters } from './scripts/counters.js';
 import { initDataBars } from './scripts/data-bars.js';
 import { initCursor } from './scripts/cursor.js';
+import { initSpotlight } from './scripts/spotlight.js';
+import { initHoverVideos } from './scripts/hover-videos.js';
 
 // Initialize Lenis
 const lenis = new Lenis({
@@ -49,4 +51,10 @@ initPreloader(() => {
   initCounters();
   initDataBars();
   initCursor();
+  
+  // High-end spotlight effects for interactive cards
+  initSpotlight('.events__capability, .sponsorship__tier');
+  
+  // Awwwards-style Hover Video integration
+  initHoverVideos();
 });

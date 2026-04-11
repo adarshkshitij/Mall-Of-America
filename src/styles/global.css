@@ -121,6 +121,48 @@
   opacity: 1;
   transform: translateY(0);
 }
+
+/* ============================================
+   HOVER VIDEO (AWWWARDS STYLE)
+   ============================================ */
+
+.hover-video-card {
+  position: relative; /* Establish containing block */
+}
+
+/* Ensure the static image is positioned correctly relative to the video */
+.hover-video-card img, 
+.hover-video-thumb {
+  position: relative;
+  z-index: 1;
+  transition: opacity var(--duration-normal) var(--ease-out);
+}
+
+.hover-video-player {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.6s var(--ease-out);
+  z-index: 2; /* Sits above the image */
+  pointer-events: none; /* Let the card handle interactions */
+  border-radius: inherit; /* Copies radius from card if present */
+}
+
+/* On hover, fade in video. (Optional: fade out image) */
+.hover-video-card.is-hovering-video .hover-video-player {
+  opacity: 1;
+}
+
+/* Ensure any text overlays stay positioned above the video layer */
+.hover-video-card > div:not(.hover-video-player):not(.hover-video-thumb) {
+  position: relative;
+  z-index: 3;
+}
+
 /* ============================================
    CUSTOM CURSOR — MAGNETIC LABEL STYLE
    ============================================ */
@@ -241,3 +283,34 @@
     display: none;
   }
 }
+
+/* ============================================
+   PREMIUM AWWWARDS BACKGROUND: GRAIN & GLOW
+   ============================================ */
+
+/* 1. The ambient luxury aura (Subtle Golden Spotlight on Dark Void) */
+body::before {
+  content: '';
+  position: fixed;
+  top: -50%; left: -50%;
+  width: 200vw; height: 200vh;
+  background: radial-gradient(circle at 70% 30%, var(--color-accent-glow) 0%, transparent 50%);
+  opacity: 0.4; /* Increased from 0.12 so it's clearly visible */
+  pointer-events: none;
+  z-index: 9998; /* Sits above the solid section backgrounds */
+  mix-blend-mode: screen; /* Overlays smoothly on dark sections */
+}
+
+/* 2. The cinematic film grain (Tactile Noise) */
+body::after {
+  content: '';
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  /* SVG Noise */
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.08; /* Increased from 0.04 to be tactile but not distracting */
+  pointer-events: none;
+  z-index: 9999; /* Sits on top of everything */
+  mix-blend-mode: overlay;
+}
+
