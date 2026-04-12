@@ -8,6 +8,7 @@ import './styles/tokens.css';
 import './styles/reset.css';
 import './styles/global.css';
 import './styles/sections.css';
+import { transitions } from './scripts/transitions.js';
 
 import Lenis from 'lenis';
 import 'lenis/dist/lenis.css';
@@ -20,6 +21,7 @@ import { initVideoController } from './scripts/video-controller.js';
 import { initRetailCarousel } from './scripts/carousel.js';
 import { initStatsCounter } from './scripts/stats.js';
 import { initDataBars } from './scripts/data-bars.js';
+import { initIconAnimations } from './scripts/icon-animations.js';
 import { initCursor } from './scripts/cursor.js';
 import { initSpotlight } from './scripts/spotlight.js';
 import { initHoverVideos } from './scripts/hover-videos.js';
@@ -45,11 +47,13 @@ requestAnimationFrame(raf);
 // Initialize app
 initPreloader(() => {
   initNavigation(lenis);
+  transitions.init();
   initAnimations(lenis);
   initVideoController();
   initRetailCarousel();
   initStatsCounter();
   initDataBars();
+  initIconAnimations();
   initCursor();
   
   // High-end spotlight effects for interactive cards

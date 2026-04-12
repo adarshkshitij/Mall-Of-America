@@ -4,7 +4,7 @@
    ============================================ */
 
 export function initDataBars() {
-  const bars = document.querySelectorAll('.sponsorship__data-fill[data-width]');
+  const bars = document.querySelectorAll('.sponsorship__data-fill[data-width], .data-bar__fill[data-width]');
   if (!bars.length) return;
 
   const observer = new IntersectionObserver(

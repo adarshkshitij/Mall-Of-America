@@ -1,8 +1,4 @@
-/* ============================================
-   NAVIGATION
-   Non-linear nav controller with scroll spy,
-   mobile menu, and scrolled state
-   ============================================ */
+import { transitions } from './transitions.js';
 
 export function initNavigation(lenis) {
   const nav = document.getElementById('main-nav');
@@ -49,12 +45,9 @@ export function initNavigation(lenis) {
     }
 
     if (lenis) {
-      lenis.scrollTo(target, {
-        offset: 0,
-        duration: 2,
-        onComplete: () => {
-          if (ScrollTrigger) ScrollTrigger.refresh();
-        }
+      // Use cinematic transition for non-linear jumps
+      transitions.wipe(sectionId, lenis, () => {
+        if (ScrollTrigger) ScrollTrigger.refresh();
       });
     } else {
       target.scrollIntoView({ behavior: 'smooth', block: 'start' });
