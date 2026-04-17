@@ -15,6 +15,7 @@ import 'lenis/dist/lenis.css';
 
 // Modules
 import { initPreloader } from './scripts/preloader.js';
+import { initDeck } from './scripts/deck.js';
 import { initNavigation } from './scripts/navigation.js';
 import { initAnimations } from './scripts/animations.js';
 import { initVideoController } from './scripts/video-controller.js';
@@ -46,7 +47,8 @@ requestAnimationFrame(raf);
 
 // Initialize app
 initPreloader(() => {
-  initNavigation(lenis);
+  const deck = initDeck();
+  initNavigation(lenis, deck);
   transitions.init();
   initAnimations(lenis);
   initVideoController();

@@ -1,6 +1,6 @@
 import { transitions } from './transitions.js';
 
-export function initNavigation(lenis) {
+export function initNavigation(lenis, deck) {
   const nav = document.getElementById('main-nav');
   const toggle = document.getElementById('nav-toggle');
   const mobileMenu = document.getElementById('mobile-menu');
@@ -33,7 +33,7 @@ export function initNavigation(lenis) {
   }
 
   // --- Smooth scroll to section (non-linear nav) ---
-  function scrollToSection(sectionId) {
+  function goToSection(sectionId) {
     const target = document.getElementById(sectionId);
     if (!target) return;
 
@@ -44,14 +44,19 @@ export function initNavigation(lenis) {
       document.body.style.overflow = '';
     }
 
+    if (deck?.isDeckMode) {
+      deck.show(sectionId);
+      return;
+    }
+
     if (lenis) {
-      // Use cinematic transition for non-linear jumps
       transitions.wipe(sectionId, lenis, () => {
         if (ScrollTrigger) ScrollTrigger.refresh();
       });
-    } else {
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      return;
     }
+
+    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
   // Attach click handlers to all nav links
@@ -59,12 +64,27 @@ export function initNavigation(lenis) {
     link.addEventListener('click', (e) => {
       e.preventDefault();
       const sectionId = link.getAttribute('data-section') || link.getAttribute('href')?.replace('#', '');
-      if (sectionId) scrollToSection(sectionId);
+      if (sectionId) goToSection(sectionId);
     });
   });
 
   // --- Scroll spy: highlight active section ---
   function updateActiveSection() {
+    if (deck?.isDeckMode) {
+      const activeId = deck.getActiveId();
+      if (!activeId) return;
+
+      document.querySelectorAll('.nav__link').forEach(link => {
+        link.classList.toggle('active', link.getAttribute('data-section') === activeId);
+      });
+
+      sideDots.forEach(dot => {
+        dot.classList.toggle('active', dot.getAttribute('data-section') === activeId);
+      });
+
+      return;
+    }
+
     const scrollPos = window.scrollY + window.innerHeight / 3;
 
     let activeId = '';
@@ -90,6 +110,7 @@ export function initNavigation(lenis) {
   }
 
   window.addEventListener('scroll', updateActiveSection, { passive: true });
+  window.addEventListener('deckchange', updateActiveSection);
   updateActiveSection();
 
   // --- Handle CTA links within sections ---
@@ -100,7 +121,7 @@ export function initNavigation(lenis) {
       const href = link.getAttribute('href');
       if (href && href.startsWith('#') && href.length > 1) {
         e.preventDefault();
-        scrollToSection(href.replace('#', ''));
+        goToSection(href.replace('#', ''));
       }
     });
   });

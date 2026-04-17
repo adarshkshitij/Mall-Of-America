@@ -39,8 +39,11 @@
       <a href="#dining" class="nav__link" data-section="dining">Dining</a>
       <a href="#entertainment" class="nav__link" data-section="entertainment">Entertainment</a>
       <a href="#events" class="nav__link" data-section="events">Events</a>
+      <a href="#highlights" class="nav__link" data-section="highlights">Highlights</a>
+      <a href="#sponsorship" class="nav__link" data-section="sponsorship">Sponsorship</a>
       <a href="#contact" class="nav__link" data-section="contact">Contact</a>
     </div>
+    <div id="deck-current-page" class="nav__current-page" aria-live="polite">Home</div>
     <div class="nav__cta-wrap">
       <a href="#contact" class="nav__cta">Partner With Us</a>
     </div>
@@ -59,8 +62,32 @@
       <a href="#dining" class="mobile-menu__link" data-section="dining">Dining</a>
       <a href="#entertainment" class="mobile-menu__link" data-section="entertainment">Entertainment</a>
       <a href="#events" class="mobile-menu__link" data-section="events">Events</a>
+      <a href="#highlights" class="mobile-menu__link" data-section="highlights">Highlights</a>
+      <a href="#sponsorship" class="mobile-menu__link" data-section="sponsorship">Sponsorship</a>
       <a href="#contact" class="mobile-menu__link" data-section="contact">Contact</a>
     </div>
+  </div>
+
+  <div id="deck-controls" class="deck-controls" aria-label="Deck controls">
+    <button id="deck-prev" class="deck-controls__btn" type="button" aria-label="Previous slide">Prev</button>
+    <div class="deck-controls__meta">
+      <div id="deck-status" class="deck-controls__status">01 / 08</div>
+    </div>
+    <div id="deck-overflow-hint" class="deck-controls__hint" hidden>
+      <span class="deck-controls__hint-icon" aria-hidden="true"></span>
+      <span>Scroll to view</span>
+    </div>
+    <button id="deck-more" class="deck-controls__btn deck-controls__btn--more" type="button" aria-label="Scroll within slide">Scroll</button>
+    <button id="deck-next" class="deck-controls__btn" type="button" aria-label="Next slide">Next</button>
+  </div>
+
+  <div id="deck-edge-nav" class="deck-edge-nav" aria-label="Slide navigation">
+    <button id="deck-prev-edge" class="deck-edge-nav__btn deck-edge-nav__btn--prev" type="button" aria-label="Previous slide">
+      <span aria-hidden="true">&#8249;</span>
+    </button>
+    <button id="deck-next-edge" class="deck-edge-nav__btn deck-edge-nav__btn--next" type="button" aria-label="Next slide">
+      <span aria-hidden="true">&#8250;</span>
+    </button>
   </div>
 
   <!-- Side Navigation Dots -->
@@ -72,6 +99,8 @@
     <a href="#dining" class="side-nav__dot" data-section="dining" aria-label="Dining"></a>
     <a href="#entertainment" class="side-nav__dot" data-section="entertainment" aria-label="Entertainment"></a>
     <a href="#events" class="side-nav__dot" data-section="events" aria-label="Events"></a>
+    <a href="#highlights" class="side-nav__dot" data-section="highlights" aria-label="Highlights"></a>
+    <a href="#sponsorship" class="side-nav__dot" data-section="sponsorship" aria-label="Sponsorship"></a>
     <a href="#contact" class="side-nav__dot" data-section="contact" aria-label="Contact"></a>
   </div>
 
@@ -101,7 +130,7 @@
         </div>
       </div>
       <div class="hero__scroll-indicator">
-        <span>Scroll to Discover</span>
+        <span id="hero-hint-text">Scroll to Discover</span>
         <div class="hero__scroll-line"></div>
       </div>
     </section>
@@ -223,9 +252,11 @@
     <!-- ========== SECTION 3: RETAIL ========== -->
     <section id="retail" class="section retail">
       <div class="container">
-        <div class="section-label">Retail Experience</div>
-        <h2 class="section-title">The Retail<br />Ecosystem</h2>
-        <p class="section-subtitle">From global flagships to emerging brands, Mall of America offers the most diverse retail environment in the country.</p>
+        <div class="deck-intro">
+          <div class="section-label">Retail Experience</div>
+          <h2 class="section-title">The Retail<br />Ecosystem</h2>
+          <p class="section-subtitle">From global flagships to emerging brands, Mall of America offers the most diverse retail environment in the country.</p>
+        </div>
       </div>
 
       <!-- Horizontal Scroll Carousel -->
@@ -354,10 +385,12 @@
     <!-- ========== SECTION 5: DINING ========== -->
     <section id="dining" class="section dining">
       <div class="container">
+        <div class="deck-intro">
         <div class="section-label">Dining & Lifestyle</div>
         <h2 class="section-title">Food Is a<br />Destination</h2>
         <p class="section-subtitle">Over 50 restaurants and eateries — from elevated dining to local favorites — making Mall of America a culinary destination in its own right.</p>
 
+        </div>
         <div class="dining__grid">
           <div class="dining__card dining__card--tall hover-video-card">
             <img class="hover-video-thumb" src="/images/dining-fine.webp" alt="Fine dining" loading="lazy" />
@@ -409,13 +442,15 @@
 
     <!-- ========== SECTION 6: ENTERTAINMENT ========== -->
     <section id="entertainment" class="section entertainment">
-      <div class="container">
-        <div class="section-label">Attractions & Entertainment</div>
+        <div class="container">
+          <div class="deck-intro">
+          <div class="section-label">Attractions & Entertainment</div>
         <h2 class="section-title">The Ultimate<br />Differentiator</h2>
         <p class="section-subtitle">This is what separates a mega-mall from a shopping center. World-class attractions that draw millions — and keep them here.</p>
       </div>
 
-      <div class="attractions">
+          </div>
+        <div class="attractions">
 
         <div class="attraction" data-attraction="nickelodeon">
           <div class="attraction__media hover-video-card">
@@ -564,60 +599,84 @@
           </div>
         </div>
 
-        <!-- Event Highlight Cards -->
-        <div class="events__highlights">
-          <h3 class="events__highlights-title">Past Highlights</h3>
-          <div class="events__highlights-grid">
-            <div class="events__highlight-card hover-video-card" data-cursor="view">
-              <img class="hover-video-thumb" src="/images/event-1.webp" alt="Concert event" loading="lazy" />
-              <video class="hover-video-player" muted loop playsinline preload="none">
-                <source src="/videos/event-live-hover.mp4" type="video/mp4" />
-              </video>
-              <div class="events__highlight-info">
-                <span class="events__highlight-type">Concert</span>
-                <h4>Live at MOA</h4>
-                <p>Major musical acts performing to packed audiences in the heart of retail.</p>
-              </div>
-            </div>
-            <div class="events__highlight-card hover-video-card" data-cursor="view">
-              <img class="hover-video-thumb" src="/images/event-2.webp" alt="Brand activation" loading="lazy" />
-              <video class="hover-video-player" muted loop playsinline preload="none">
-                <source src="/videos/event-takeover-hover.mp4" type="video/mp4" />
-              </video>
-              <div class="events__highlight-info">
-                <span class="events__highlight-type">Activation</span>
-                <h4>Brand Takeovers</h4>
-                <p>Full-property activations transforming the mall into an immersive brand world.</p>
-              </div>
-            </div>
-            <div class="events__highlight-card hover-video-card" data-cursor="view">
-              <img class="hover-video-thumb" src="/images/event-3.webp" alt="Celebrity appearance" loading="lazy" />
-              <video class="hover-video-player" muted loop playsinline preload="none">
-                <source src="/videos/event-star-hover.mp4" type="video/mp4" />
-              </video>
-              <div class="events__highlight-info">
-                <span class="events__highlight-type">Celebrity</span>
-                <h4>Star Appearances</h4>
-                <p>Celebrity meet-and-greets, signings, and red carpet events drawing massive crowds.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
         <div class="events__cta-section">
           <h3>Ready to Book the Stage?</h3>
           <p>From intimate activations to large-scale concerts, we have the space, the audience, and the infrastructure.</p>
-          <a href="#contact" class="btn btn--primary btn--large">Inquire About Events</a>
+          <a href="#highlights" class="btn btn--primary btn--large">See Past Highlights</a>
         </div>
       </div>
     </section>
 
-    <!-- ========== SECTION 8: SPONSORSHIP (Expandable Module) ========== -->
+    <!-- ========== SECTION 8: PAST HIGHLIGHTS ========== -->
+    <section id="highlights" class="section highlights">
+      <div class="container highlights__inner">
+        <div class="deck-intro deck-intro--compact">
+          <div class="section-label">Past Highlights</div>
+          <h2 class="section-title">Proof That the<br />Platform Performs</h2>
+          <p class="section-subtitle">Concerts, brand takeovers, and celebrity-led moments that turned Mall of America into the center of attention.</p>
+        </div>
+
+        <div class="highlights__grid">
+          <article class="highlights__card highlights__card--feature hover-video-card" data-cursor="view">
+            <img class="hover-video-thumb" src="/images/event-1.webp" alt="Concert event" loading="lazy" />
+            <video class="hover-video-player" muted loop playsinline preload="none">
+              <source src="/videos/event-live-hover.mp4" type="video/mp4" />
+            </video>
+            <div class="highlights__overlay">
+              <span class="highlights__kicker">Concert</span>
+              <h3>Live at MOA</h3>
+              <p>Major musical acts performing to packed audiences in the heart of retail.</p>
+            </div>
+          </article>
+          <article class="highlights__card hover-video-card" data-cursor="view">
+            <img class="hover-video-thumb" src="/images/event-2.webp" alt="Brand activation" loading="lazy" />
+            <video class="hover-video-player" muted loop playsinline preload="none">
+              <source src="/videos/event-takeover-hover.mp4" type="video/mp4" />
+            </video>
+            <div class="highlights__overlay">
+              <span class="highlights__kicker">Activation</span>
+              <h3>Brand Takeovers</h3>
+              <p>Full-property activations transforming the mall into an immersive brand world.</p>
+            </div>
+          </article>
+          <article class="highlights__card hover-video-card" data-cursor="view">
+            <img class="hover-video-thumb" src="/images/event-3.webp" alt="Celebrity appearance" loading="lazy" />
+            <video class="hover-video-player" muted loop playsinline preload="none">
+              <source src="/videos/event-star-hover.mp4" type="video/mp4" />
+            </video>
+            <div class="highlights__overlay">
+              <span class="highlights__kicker">Celebrity</span>
+              <h3>Star Appearances</h3>
+              <p>Celebrity meet-and-greets, signings, and red carpet events drawing massive crowds.</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="highlights__metrics">
+          <div class="highlights__metric">
+            <span class="highlights__metric-value">40M+</span>
+            <span class="highlights__metric-label">annual visitors reachable on-site</span>
+          </div>
+          <div class="highlights__metric">
+            <span class="highlights__metric-value">3</span>
+            <span class="highlights__metric-label">activation formats proven across the platform</span>
+          </div>
+          <div class="highlights__metric">
+            <span class="highlights__metric-value">1</span>
+            <span class="highlights__metric-label">destination mixing retail, spectacle, and media</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== SECTION 9: SPONSORSHIP (Expandable Module) ========== -->
     <section id="sponsorship" class="section sponsorship">
       <div class="container">
-        <div class="section-label">Partnership Opportunities</div>
-        <h2 class="section-title">Amplify Your<br />Brand Reach</h2>
-        <p class="section-subtitle">40 million annual visitors. One property. Unlimited activation potential.</p>
+        <div class="deck-intro">
+          <div class="section-label">Partnership Opportunities</div>
+          <h2 class="section-title">Amplify Your<br />Brand Reach</h2>
+          <p class="section-subtitle">40 million annual visitors. One property. Unlimited activation potential.</p>
+        </div>
 
         <div class="sponsorship__tiers">
           <div class="sponsorship__tier">
@@ -691,7 +750,7 @@
       </div>
     </section>
 
-    <!-- ========== SECTION 9: CTA / CONTACT ========== -->
+    <!-- ========== SECTION 10: CTA / CONTACT ========== -->
     <section id="contact" class="section contact">
       <div class="contact__bg-video">
         <video autoplay muted loop playsinline poster="/images/overview-aerial.webp" style="transform: scale(1.15); object-fit: cover; width:100%; height:100%;">
