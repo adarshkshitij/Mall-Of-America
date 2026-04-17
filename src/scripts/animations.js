@@ -9,6 +9,8 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 export function initAnimations(lenis) {
+  const isDeckMode = document.documentElement.classList.contains('deck-mode');
+
   // Sync ScrollTrigger with Lenis
   if (lenis) {
     lenis.on('scroll', ScrollTrigger.update);
@@ -72,6 +74,11 @@ export function initAnimations(lenis) {
   );
 
   revealElements.forEach((el, i) => {
+    if (isDeckMode) {
+      gsap.set(el, { clearProps: 'all', opacity: 1, y: 0 });
+      return;
+    }
+
     gsap.from(el, {
       opacity: 0,
       y: 40,
@@ -103,8 +110,15 @@ export function initAnimations(lenis) {
   // ---- Attraction alternate slides ----
   document.querySelectorAll('.attraction').forEach((attraction) => {
     const isReverse = attraction.classList.contains('attraction--reverse');
+    const media = attraction.querySelector('.attraction__media');
+    const content = attraction.querySelector('.attraction__content');
 
-    gsap.from(attraction.querySelector('.attraction__media'), {
+    if (isDeckMode) {
+      gsap.set([media, content], { clearProps: 'all', opacity: 1, x: 0 });
+      return;
+    }
+
+    gsap.from(media, {
       opacity: 0,
       x: isReverse ? 60 : -60,
       duration: 1,
@@ -116,7 +130,7 @@ export function initAnimations(lenis) {
       },
     });
 
-    gsap.from(attraction.querySelector('.attraction__content'), {
+    gsap.from(content, {
       opacity: 0,
       x: isReverse ? -60 : 60,
       duration: 1,
@@ -131,6 +145,11 @@ export function initAnimations(lenis) {
 
   // ---- Attraction stats stagger ----
   document.querySelectorAll('.attraction__stats').forEach(statsContainer => {
+    if (isDeckMode) {
+      gsap.set(statsContainer.children, { clearProps: 'all', opacity: 1, y: 0 });
+      return;
+    }
+
     gsap.from(statsContainer.children, {
       opacity: 0,
       y: 20,
@@ -161,6 +180,9 @@ export function initAnimations(lenis) {
   }
 
   // ---- Contact title reveal ----
+  if (isDeckMode) {
+    gsap.set('.contact__title span', { clearProps: 'all', opacity: 1, y: 0 });
+  } else {
   gsap.from('.contact__title span', {
     opacity: 0,
     y: 50,
@@ -173,6 +195,7 @@ export function initAnimations(lenis) {
       toggleActions: 'play none none none',
     },
   });
+  }
 
   // ---- Refresh on resize ----
   let resizeTimer;

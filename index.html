@@ -28,9 +28,9 @@
 
   <!-- Navigation -->
   <nav id="main-nav" class="nav" aria-label="Main navigation">
-    <div class="nav__logo">
+    <a href="#hero" class="nav__logo" data-section="hero" aria-label="Go to home page">
       <span class="nav__logo-mark">MOA</span>
-    </div>
+    </a>
     <div class="nav__links">
       <a href="#hero" class="nav__link active" data-section="hero">Home</a>
       <a href="#overview" class="nav__link" data-section="overview">The Property</a>
@@ -176,7 +176,10 @@
         <!-- Split Feature -->
         <div class="split-feature">
           <div class="split-feature__media">
-            <img src="/images/overview-aerial.webp" alt="Aerial view of Mall of America" class="split-feature__img" loading="lazy" />
+            <video class="split-feature__video" autoplay muted loop playsinline poster="/images/overview-aerial.webp">
+              <source src="/videos/intros/intro-property.mp4" type="video/mp4" />
+            </video>
+            <div class="split-feature__media-glow"></div>
           </div>
           <div class="split-feature__content">
             <h3 class="split-feature__heading">Strategic Location, Unmatched Access</h3>
@@ -454,8 +457,8 @@
 
         <div class="attraction" data-attraction="nickelodeon">
           <div class="attraction__media hover-video-card">
-            <img class="hover-video-thumb" src="/images/ent-nickelodeon.webp" alt="Nickelodeon Universe" loading="lazy" />
-            <video class="hover-video-player" muted loop playsinline preload="none">
+            <img class="hover-video-thumb" src="/images/ent-nickelodeon.webp" alt="Nickelodeon Universe" loading="eager" />
+            <video class="hover-video-player" muted loop playsinline preload="metadata">
               <source src="/videos/ent-nickelodeon-hover.mp4" type="video/mp4" />
             </video>
           </div>
@@ -473,8 +476,8 @@
 
         <div class="attraction attraction--reverse" data-attraction="sealife">
           <div class="attraction__media hover-video-card">
-            <img class="hover-video-thumb" src="/images/ent-sealife.webp" alt="SEA LIFE Aquarium" loading="lazy" />
-            <video class="hover-video-player" muted loop playsinline preload="none">
+            <img class="hover-video-thumb" src="/images/ent-sealife.webp" alt="SEA LIFE Aquarium" loading="eager" />
+            <video class="hover-video-player" muted loop playsinline preload="metadata">
               <source src="/videos/ent-sealife-hover.mp4" type="video/mp4" />
             </video>
           </div>
@@ -492,8 +495,8 @@
 
         <div class="attraction" data-attraction="flyover">
           <div class="attraction__media hover-video-card">
-            <img class="hover-video-thumb" src="/images/ent-flyover.webp" alt="FlyOver America" loading="lazy" />
-            <video class="hover-video-player" muted loop playsinline preload="none">
+            <img class="hover-video-thumb" src="/images/ent-flyover.webp" alt="FlyOver America" loading="eager" />
+            <video class="hover-video-player" muted loop playsinline preload="metadata">
               <source src="/videos/ent-flyover-hover.mp4" type="video/mp4" />
             </video>
           </div>
@@ -511,8 +514,8 @@
 
         <div class="attraction attraction--reverse" data-attraction="crayola">
           <div class="attraction__media hover-video-card">
-            <img class="hover-video-thumb" src="/images/ent-crayola.webp" alt="Crayola Experience" loading="lazy" />
-            <video class="hover-video-player" muted loop playsinline preload="none">
+            <img class="hover-video-thumb" src="/images/ent-crayola.webp" alt="Crayola Experience" loading="eager" />
+            <video class="hover-video-player" muted loop playsinline preload="metadata">
               <source src="/videos/ent-crayola-hover.mp4" type="video/mp4" />
             </video>
           </div>
